@@ -6,7 +6,7 @@
 /*   By: yboukhmi <yboukhmi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/06 12:20:36 by yboukhmi          #+#    #+#             */
-/*   Updated: 2025/12/06 12:40:30 by yboukhmi         ###   ########.fr       */
+/*   Updated: 2025/12/06 18:02:57 by yboukhmi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,9 @@ typedef struct s_data
 }t_data;
 
 char	**ft_split(char const *s, char c);
+void	exit_free(t_data *a, t_data *b, char **args);
+void	free_arr(char **arr);
+void    free_stack(t_data *data);
+void    init_data(t_data **a, t_data **b, char **argv);
 
 #endif
