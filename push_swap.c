@@ -3,24 +3,42 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yboukhmi <yboukhmi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/06 12:20:39 by yboukhmi          #+#    #+#             */
-/*   Updated: 2025/12/06 18:03:51 by yboukhmi         ###   ########.fr       */
+/*   Updated: 2025/12/08 17:04:35 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+void	args_to_arr(t_data *a, t_data *b, int argc, char **argv)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	while (i < argc)
+	{
+		a->arr = ft_split(argv[i], ' ');
+		check_for_empty_string(char);
+		j = 0;
+		while (a->arr[j] != NULL)
+		{
+			
+		}
+		i++;
+	}
+}
 void    init_data(t_data **a, t_data **b, char **argv)
 {
 	*a = malloc(sizeof(t_data));
 	if (!*a)
-		exit_free(*a, *b, &argv);
+		exit_free(*a, *b, argv);
 	(*a)->stack = NULL;
 	*b = malloc(sizeof(t_data));
 	if (!*b)
-		exit_free(*a, *b, &argv);
+		exit_free(*a, *b, argv);
 	(*b)->stack = NULL;
 }
 
@@ -77,19 +95,7 @@ int main(int argc, char **argv)
 	t_data *a;
 	t_data *b;
 
-	a = malloc(sizeof(t_data));
-	if (!a)
-		printf("error mallocing a");
-	b = malloc(sizeof(t_data));
-	if (!b)
-		printf("error mallocing b");
-	while (i < argc)
-	{
-		a->arr = ft_split(argv[i], ' ');
-		j = 0;
-		while (a->arr[j])
-			printf("%s\n", a->arr[j++]);
-		i++;
-	}
+	init_data(&a, &b, argv);
+	args_to_arr(a, b, argc, argv);
 	return 0;
 }

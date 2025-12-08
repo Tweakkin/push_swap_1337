@@ -1,23 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap_utils.c                                  :+:      :+:    :+:   */
+/*   validate.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/04 18:09:07 by yboukhmi          #+#    #+#             */
-/*   Updated: 2025/12/08 16:44:20 by marvin           ###   ########.fr       */
+/*   Created: 2025/12/08 16:53:55 by marvin            #+#    #+#             */
+/*   Updated: 2025/12/08 16:53:55 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_strlen(const char *str)
+void	check_for_empty_string(char *arg, t_data *a, t_data *b, char **argv)
 {
 	int	i;
 
 	i = 0;
-	while (str[i] != '\0')
-		i++;
-	return (i);
+	if (ft_strlen(arg) == 0)
+    {
+        printf("Empty exit\n");
+		exit_free(a, b, argv);
+    }
+	else if (ft_strlen(arg) > 0)
+	{
+		while (arg[i])
+		{
+			if (arg[i] != ' ')
+				return ;
+			i++;
+		}
+	}
+    printf("Empty exit\n");
+	exit_free(a, b, argv);
 }
