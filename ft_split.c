@@ -3,16 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yboukhmi <yboukhmi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/04 18:10:42 by yboukhmi          #+#    #+#             */
-/*   Updated: 2025/12/04 18:29:18 by yboukhmi         ###   ########.fr       */
+/*   Updated: 2025/12/08 13:24:24 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdlib.h>
-#include <stddef.h>
 
 static void	addwords(char **splitted, char const *s, char c, size_t strnum)
 {

@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/06 12:20:36 by yboukhmi          #+#    #+#             */
-/*   Updated: 2025/12/08 16:53:46 by marvin           ###   ########.fr       */
+/*   Updated: 2025/12/10 14:29:43 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,8 @@ void    free_stack(t_data *data);
 void    init_data(t_data **a, t_data **b, char **argv);
 int	ft_strlen(const char *str);
 void	check_for_empty_string(char *arg, t_data *a, t_data *b, char **argv);
+void	ft_lstadd_back(t_stack **lst, t_stack *new);
+t_stack	*ft_lstnew(int content);
+int	ft_atoi_safe(const char *str);
 
 #endif

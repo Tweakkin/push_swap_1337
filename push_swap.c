@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/06 12:20:39 by yboukhmi          #+#    #+#             */
-/*   Updated: 2025/12/08 17:04:35 by marvin           ###   ########.fr       */
+/*   Updated: 2025/12/10 19:01:04 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,18 @@ void	args_to_arr(t_data *a, t_data *b, int argc, char **argv)
 	i = 0;
 	while (i < argc)
 	{
+		check_for_empty_string(argv[i], a, b, argv);
 		a->arr = ft_split(argv[i], ' ');
-		check_for_empty_string(char);
+		if (!a->arr)
+			exit_free(a, b, argv);
 		j = 0;
 		while (a->arr[j] != NULL)
 		{
-			
+			ft_lstadd_back(&a->stack, ft_lstnew(ft_atoi_safe(a->arr[j])));
+			j++;
 		}
+		free_arr(a->arr);
+		a->arr = NULL;
 		i++;
 	}
 }
@@ -87,6 +92,15 @@ void	exit_free(t_data *a, t_data *b, char **args)
 	exit(1);
 }
 
+void print_list(t_stack *head) {
+    t_stack *current = head;
+    while (current != NULL) {
+        printf("%d -> ", current->value);
+        current = current->next;
+    }
+    printf("NULL\n");
+}
+
 int main(int argc, char **argv)
 {
 	int i;
@@ -97,5 +111,6 @@ int main(int argc, char **argv)
 
 	init_data(&a, &b, argv);
 	args_to_arr(a, b, argc, argv);
+	print_list(a->stack);
 	return 0;
 }
