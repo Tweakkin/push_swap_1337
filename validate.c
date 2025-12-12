@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-void	check_for_empty_string(char *arg, t_data *a, t_data *b, char **argv)
+void	check_for_empty_string(char *arg, t_data *a, t_data *b)
 {
 	int	i;
 
@@ -20,7 +20,7 @@ void	check_for_empty_string(char *arg, t_data *a, t_data *b, char **argv)
 	if (ft_strlen(arg) == 0)
     {
         printf("Empty exit\n");
-		exit_free(a, b, argv);
+		exit_free(a, b);
     }
 	else if (ft_strlen(arg) > 0)
 	{
@@ -32,5 +32,5 @@ void	check_for_empty_string(char *arg, t_data *a, t_data *b, char **argv)
 		}
 	}
     printf("Empty exit\n");
-	exit_free(a, b, argv);
+	exit_free(a, b);
 }
