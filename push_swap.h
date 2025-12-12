@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/06 12:20:36 by yboukhmi          #+#    #+#             */
-/*   Updated: 2025/12/12 18:43:35 by marvin           ###   ########.fr       */
+/*   Updated: 2025/12/12 21:54:18 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 #include <unistd.h>
 #include <stddef.h>
 #include <stdio.h>
+#include <limits.h>
 
 typedef struct s_stack
 {
@@ -39,7 +40,8 @@ int	ft_strlen(const char *str);
 void	check_for_empty_string(char *arg, t_data *a, t_data *b);
 void	ft_lstadd_back(t_stack **lst, t_stack *new);
 t_stack	*ft_lstnew(int content);
-int	ft_atoi_safe(const char *str);
+int	ft_atoi_safe(const char *str, t_data *a, t_data *b);
 void	check_for_invalid_char(char *agr, t_data *a, t_data *b);
+void	check_for_duplicate(int num, t_data *a, t_data *b);
 
 #endif

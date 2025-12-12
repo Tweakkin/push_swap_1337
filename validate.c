@@ -34,3 +34,38 @@ void	check_for_empty_string(char *arg, t_data *a, t_data *b)
     printf("Empty exit\n");
 	exit_free(a, b);
 }
+
+void	check_for_duplicate(int num, t_data *a, t_data *b)
+{
+	t_stack *curr_node;
+	
+	curr_node = a->stack;
+	while (curr_node != NULL)
+	{
+		if (num == curr_node->value)
+			exit_free(a, b);
+		curr_node = curr_node->next;
+	}
+	return;
+}
+
+void	check_for_invalid_char(char *agr, t_data *a, t_data *b)
+{
+	int	i;
+
+	i = 0;
+	while(agr[i])
+	{
+		if ((agr[i] <= '9' && agr[i] >= '0') || agr[i] == ' ')
+			;
+		else if (agr[i] == '-' || agr[i] == '+')
+		{
+			if (!(i == 0 || agr[i-1] == ' ') || !(agr[i+1] >= '0' && agr[i+1] <= '9'))
+				exit_free(a, b);
+		}
+		else
+			exit_free(a, b);
+		i++;
+	}
+	return ;
+}
