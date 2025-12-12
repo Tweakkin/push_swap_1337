@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/06 12:20:36 by yboukhmi          #+#    #+#             */
-/*   Updated: 2025/12/12 21:54:18 by marvin           ###   ########.fr       */
+/*   Updated: 2025/12/12 23:05:14 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,5 +43,7 @@ t_stack	*ft_lstnew(int content);
 int	ft_atoi_safe(const char *str, t_data *a, t_data *b);
 void	check_for_invalid_char(char *agr, t_data *a, t_data *b);
 void	check_for_duplicate(int num, t_data *a, t_data *b);
+int	stack_size(t_stack *a);
+int	check_if_sorted(t_stack *a);
 
 #endif

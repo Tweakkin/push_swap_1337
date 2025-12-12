@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/06 12:20:39 by yboukhmi          #+#    #+#             */
-/*   Updated: 2025/12/12 22:06:38 by marvin           ###   ########.fr       */
+/*   Updated: 2025/12/12 23:06:07 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,11 +58,41 @@ void print_list(t_stack *head) {
     printf("NULL\n");
 }
 
+int	check_if_sorted(t_stack *a)
+{
+	t_stack *curr_node;
+
+	if (!a)
+		return (1);
+	curr_node = a;
+	while (curr_node->next != NULL)
+	{
+		if (curr_node->value > curr_node->next->value)
+			return (0);
+		curr_node = curr_node->next;
+	}
+	return (1);
+}
+
+int	stack_size(t_stack *a)
+{
+	int		i;
+	t_stack	*curr_node;
+
+	i = 0;
+	if (!a)
+		return (0);
+	curr_node = a;
+	while (curr_node != NULL)
+	{
+		curr_node = curr_node->next;
+		i++;
+	}
+	return (i);
+}
+
 int main(int argc, char **argv)
 {
-	int i;
-	int j = 0;
-	i = 1;
 	t_data *a;
 	t_data *b;
 	
@@ -70,6 +100,8 @@ int main(int argc, char **argv)
 		return (0);
 	init_data(&a, &b, argv);
 	args_to_arr(a, b, argc, argv);
+	printf("Sorted result : %d\n", check_if_sorted(a->stack));
 	print_list(a->stack);
+	printf("numb of nodes %d\n", stack_size(a->stack));
 	return 0;
 }
