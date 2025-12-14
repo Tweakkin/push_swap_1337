@@ -6,7 +6,7 @@
 /*   By: yboukhmi <yboukhmi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/06 12:20:39 by yboukhmi          #+#    #+#             */
-/*   Updated: 2025/12/14 22:43:55 by yboukhmi         ###   ########.fr       */
+/*   Updated: 2025/12/14 22:46:39 by yboukhmi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,7 +111,7 @@ int main(int argc, char **argv)
 	print_list(a->stack);
 	printf("b stack : ");
 	print_list(b->stack);
-	pb(, b);
+	pb(a, b);
 	printf("a stack :");
 	print_list(a->stack);
 	printf("b stack : ");
