@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: yboukhmi <yboukhmi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/06 12:20:36 by yboukhmi          #+#    #+#             */
-/*   Updated: 2025/12/12 23:05:14 by marvin           ###   ########.fr       */
+/*   Updated: 2025/12/14 22:39:35 by yboukhmi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,5 +45,11 @@ void	check_for_invalid_char(char *agr, t_data *a, t_data *b);
 void	check_for_duplicate(int num, t_data *a, t_data *b);
 int	stack_size(t_stack *a);
 int	check_if_sorted(t_stack *a);
+int	sa(t_data *a);
+int	sb(t_data *a);
+void    swap_nodes(t_data *s);
+int ss(t_data *a, t_data *b);
+int	pa(t_data *a, t_data *b);
+int	pb(t_data *a, t_data *b);
 
 #endif

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: yboukhmi <yboukhmi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/06 12:20:39 by yboukhmi          #+#    #+#             */
-/*   Updated: 2025/12/12 23:06:07 by marvin           ###   ########.fr       */
+/*   Updated: 2025/12/14 22:43:55 by yboukhmi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,8 +100,29 @@ int main(int argc, char **argv)
 		return (0);
 	init_data(&a, &b, argv);
 	args_to_arr(a, b, argc, argv);
-	printf("Sorted result : %d\n", check_if_sorted(a->stack));
+	printf("a stack :");
 	print_list(a->stack);
-	printf("numb of nodes %d\n", stack_size(a->stack));
+	printf("b stack : ");
+	print_list(b->stack);
+	sa(a);
+	print_list(a->stack);
+	pa(a, b);
+	printf("a stack :");
+	print_list(a->stack);
+	printf("b stack : ");
+	print_list(b->stack);
+	pb(, b);
+	printf("a stack :");
+	print_list(a->stack);
+	printf("b stack : ");
+	print_list(b->stack);
+	ss(a, b);
+	printf("a stack :");
+	print_list(a->stack);
+	printf("b stack : ");
+	print_list(b->stack);
+	
+	free_stack(a);
+	free_stack(b);
 	return 0;
 }
