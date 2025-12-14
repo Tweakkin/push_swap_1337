@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   lst_handling.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: yboukhmi <yboukhmi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/10 12:48:14 by marvin            #+#    #+#             */
-/*   Updated: 2025/12/10 12:48:14 by marvin           ###   ########.fr       */
+/*   Updated: 2025/12/14 23:02:20 by yboukhmi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,4 +40,13 @@ t_stack	*ft_lstnew(int content)
 	newnode->value = content;
 	newnode->next = NULL;
 	return (newnode);
+}
+
+t_stack	*ft_lstlast(t_stack *lst)
+{
+	if (!lst)
+		return (NULL);
+	while (lst->next != NULL)
+		lst = lst->next;
+	return (lst);
 }

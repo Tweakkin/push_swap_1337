@@ -6,7 +6,7 @@
 /*   By: yboukhmi <yboukhmi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/14 17:39:57 by yboukhmi          #+#    #+#             */
-/*   Updated: 2025/12/14 22:44:48 by yboukhmi         ###   ########.fr       */
+/*   Updated: 2025/12/14 23:40:39 by yboukhmi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,5 +32,23 @@ int	pa(t_data *a, t_data *b)
 	temp->next = a->stack;
 	a->stack = temp;
 	write(1, "pa\n", 3);
+	return (1);
+}
+
+int ra(t_data *a)
+{
+	if (!a || stack_size(a->stack) < 2)
+		return (0);
+	rotate_node(a);
+	write(1, "ra\n", 3);
+	return (1);
+}
+
+int	rra(t_data *a)
+{
+	if (!a || stack_size(a->stack) < 2)
+		return (0);
+	reverse_rotate(a);
+	write(1, "rra\n", 4);
 	return (1);
 }

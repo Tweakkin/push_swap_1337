@@ -6,7 +6,7 @@
 /*   By: yboukhmi <yboukhmi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/06 12:20:36 by yboukhmi          #+#    #+#             */
-/*   Updated: 2025/12/14 22:39:35 by yboukhmi         ###   ########.fr       */
+/*   Updated: 2025/12/14 23:40:18 by yboukhmi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,5 +51,12 @@ void    swap_nodes(t_data *s);
 int ss(t_data *a, t_data *b);
 int	pa(t_data *a, t_data *b);
 int	pb(t_data *a, t_data *b);
+t_stack	*ft_lstlast(t_stack *lst);
+void	rotate_node(t_data *s);
+int ra(t_data *a);
+int	rr(t_data *a, t_data *b);
+int rb(t_data *b);
+void reverse_rotate(t_data *s);
+int	rra(t_data *a);
 
 #endif
