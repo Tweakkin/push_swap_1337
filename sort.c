@@ -6,7 +6,7 @@
 /*   By: yboukhmi <yboukhmi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/15 12:44:14 by yboukhmi          #+#    #+#             */
-/*   Updated: 2025/12/15 12:57:27 by yboukhmi         ###   ########.fr       */
+/*   Updated: 2025/12/15 13:02:00 by yboukhmi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,6 @@ void	sort_three(t_data *a)
 		ra(a);
 	else if (sec > first && sec > third)
 		rra(a);
-	else if (third > first && third > sec)
-		;
 	if (a->stack->value > a->stack->next->value)
 		sa(a);
-	else
-		;
 }
