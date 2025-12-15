@@ -6,7 +6,7 @@
 /*   By: yboukhmi <yboukhmi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/06 12:20:39 by yboukhmi          #+#    #+#             */
-/*   Updated: 2025/12/15 12:57:53 by yboukhmi         ###   ########.fr       */
+/*   Updated: 2025/12/15 17:32:03 by yboukhmi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,10 +43,12 @@ void    init_data(t_data **a, t_data **b, char **argv)
 	if (!*a)
 		exit_free(*a, *b);
 	(*a)->stack = NULL;
+	(*a)->arr = NULL;
 	*b = malloc(sizeof(t_data));
 	if (!*b)
 		exit_free(*a, *b);
 	(*b)->stack = NULL;
+	(*b)->arr = NULL;
 }
 
 void print_list(t_stack *head) {
@@ -100,10 +102,10 @@ int main(int argc, char **argv)
 		return (0);
 	init_data(&a, &b, argv);
 	args_to_arr(a, b, argc, argv);
-	printf("a stack :");
+	printf("a : ");
 	print_list(a->stack);
-	sort_two(a);
-	printf("a stack :");
+	sort_five(a, b);
+	printf("after sorting : ");
 	print_list(a->stack);
 	
 	free_stack(a);

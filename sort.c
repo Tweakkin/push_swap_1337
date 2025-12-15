@@ -6,11 +6,60 @@
 /*   By: yboukhmi <yboukhmi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/15 12:44:14 by yboukhmi          #+#    #+#             */
-/*   Updated: 2025/12/15 13:02:00 by yboukhmi         ###   ########.fr       */
+/*   Updated: 2025/12/15 17:25:38 by yboukhmi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+int	find_min_index(t_stack *s)
+{
+	int	i;
+	int	index;
+	int	min;
+
+	i = 0;
+	min = s->value;
+	index = i;
+	while (s)
+	{
+		if (s->value < min)
+		{
+			index = i;
+			min = s->value; 
+		}
+		s = s->next;
+		i++;
+	}
+	return (index);
+}
+
+void	sort_five(t_data *a, t_data *b)
+{
+	int	min_index;
+	int	size;
+
+	size = stack_size(a->stack);
+	while (size > 3)
+	{
+		min_index = find_min_index(a->stack);
+		if (min_index <= size / 2)
+		{
+			while (min_index--)
+				ra(a);
+		}
+		else
+		{
+			while (min_index++ < size)
+				rra(a);
+		}
+		pb(a, b);
+		size--;
+	}
+	sort_three(a);
+	while (b->stack != NULL)
+		pa(a, b);
+}
 
 void	sort_two(t_data *a)
 {
