@@ -6,7 +6,7 @@
 /*   By: yboukhmi <yboukhmi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/06 12:20:39 by yboukhmi          #+#    #+#             */
-/*   Updated: 2025/12/14 23:27:57 by yboukhmi         ###   ########.fr       */
+/*   Updated: 2025/12/15 12:57:53 by yboukhmi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,7 +102,8 @@ int main(int argc, char **argv)
 	args_to_arr(a, b, argc, argv);
 	printf("a stack :");
 	print_list(a->stack);
-	rr(a, b);
+	sort_two(a);
+	printf("a stack :");
 	print_list(a->stack);
 	
 	free_stack(a);

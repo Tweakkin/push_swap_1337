@@ -6,7 +6,7 @@
 /*   By: yboukhmi <yboukhmi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/06 12:20:36 by yboukhmi          #+#    #+#             */
-/*   Updated: 2025/12/14 23:40:18 by yboukhmi         ###   ########.fr       */
+/*   Updated: 2025/12/15 12:57:39 by yboukhmi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,5 +58,9 @@ int	rr(t_data *a, t_data *b);
 int rb(t_data *b);
 void reverse_rotate(t_data *s);
 int	rra(t_data *a);
+int	rrb(t_data *b);
+int	rrr(t_data *a, t_data *b);
+void	sort_three(t_data *a);
+void	sort_two(t_data *a);
 
 #endif

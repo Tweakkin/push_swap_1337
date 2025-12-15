@@ -6,17 +6,17 @@
 /*   By: yboukhmi <yboukhmi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/14 21:31:31 by yboukhmi          #+#    #+#             */
-/*   Updated: 2025/12/14 23:41:28 by yboukhmi         ###   ########.fr       */
+/*   Updated: 2025/12/15 12:11:31 by yboukhmi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	sb(t_data *a)
+int	sb(t_data *b)
 {
-	if (!a || stack_size(a->stack) < 2)
+	if (!b || stack_size(b->stack) < 2)
 		return (0);
-	swap_nodes(a);
+	swap_nodes(b);
 	write(1, "sb\n", 3);
 	return (1);
 }
