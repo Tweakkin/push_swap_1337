@@ -6,7 +6,7 @@
 /*   By: yboukhmi <yboukhmi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/06 12:20:39 by yboukhmi          #+#    #+#             */
-/*   Updated: 2025/12/15 17:32:03 by yboukhmi         ###   ########.fr       */
+/*   Updated: 2025/12/16 23:38:10 by yboukhmi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,6 +93,25 @@ int	stack_size(t_stack *a)
 	return (i);
 }
 
+void	push_swap(t_data *a, t_data *b)
+{
+	int	size;
+
+	size = stack_size(a->stack);
+	if (check_if_sorted(a->stack) == 1)
+		return;
+	else if (size == 1)
+		return;
+	else if (size == 2)
+		sort_two(a);
+	else if (size == 3)
+		sort_three(a);
+	else if (size == 4 || size == 5)
+		sort_five(a, b);
+	else
+		return;
+}
+
 int main(int argc, char **argv)
 {
 	t_data *a;
@@ -102,12 +121,8 @@ int main(int argc, char **argv)
 		return (0);
 	init_data(&a, &b, argv);
 	args_to_arr(a, b, argc, argv);
-	printf("a : ");
+	push_swap(a, b);
 	print_list(a->stack);
-	sort_five(a, b);
-	printf("after sorting : ");
-	print_list(a->stack);
-	
 	free_stack(a);
 	free_stack(b);
 	return 0;

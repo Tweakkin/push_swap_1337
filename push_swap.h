@@ -6,7 +6,7 @@
 /*   By: yboukhmi <yboukhmi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/06 12:20:36 by yboukhmi          #+#    #+#             */
-/*   Updated: 2025/12/15 17:21:46 by yboukhmi         ###   ########.fr       */
+/*   Updated: 2025/12/16 23:37:31 by yboukhmi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,5 +64,6 @@ void	sort_three(t_data *a);
 void	sort_two(t_data *a);
 int	find_min_index(t_stack *s);
 void	sort_five(t_data *a, t_data *b);
+void	push_swap(t_data *a, t_data *b);
 
 #endif
