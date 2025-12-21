@@ -6,7 +6,7 @@
 /*   By: yboukhmi <yboukhmi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/06 12:20:39 by yboukhmi          #+#    #+#             */
-/*   Updated: 2025/12/21 16:44:24 by yboukhmi         ###   ########.fr       */
+/*   Updated: 2025/12/21 18:18:29 by yboukhmi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -138,13 +138,11 @@ int main(int argc, char **argv)
 	t_data *b;
 	
 	if (argc < 2)
-		return (0);
+		return 0;
 	init_data(&a, &b);
 	args_to_arr(a, b, argc, argv);
 	index_stack(a->stack);
 	push_swap(a, b);
-	printf("a : ");
-	print_list(a->stack);
 	free_stack(a);
 	free_stack(b);
 	return 0;
