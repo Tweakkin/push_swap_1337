@@ -6,7 +6,7 @@
 /*   By: yboukhmi <yboukhmi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/15 12:44:14 by yboukhmi          #+#    #+#             */
-/*   Updated: 2025/12/15 17:25:38 by yboukhmi         ###   ########.fr       */
+/*   Updated: 2025/12/21 16:42:10 by yboukhmi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,4 +82,79 @@ void	sort_three(t_data *a)
 		rra(a);
 	if (a->stack->value > a->stack->next->value)
 		sa(a);
+}
+
+void	sort_chunks(t_data *a, t_data *b)
+{
+	int	range;
+	int	size_of_stack;
+	int	pushed_count;
+
+	pushed_count = 0;
+	size_of_stack = stack_size(a->stack);
+	if (size_of_stack <= 100)
+		range = 15;
+	else
+		range = 30;
+	while (a->stack != NULL)
+	{
+		if (a->stack->index < range + pushed_count)
+		{
+			if (a->stack->index <= pushed_count)
+			{
+				pb(a , b);
+				rb(b);
+			}
+			else
+				pb (a, b);
+			pushed_count++;
+		}
+		else
+			ra(a);
+	}
+	push_back_to_a(a, b);
+}
+int	position_in_stack(t_stack *s, int index)
+{
+	int pos;
+
+	pos = 0;
+	while (s)
+	{
+		if (index == s->index)
+			return (pos);
+		pos++;
+		s = s->next;
+	}
+	return (-1);
+}
+void	push_back_to_a(t_data *a, t_data *b)
+{
+	int	index_max;
+	int position;
+
+	position = 0;
+	index_max = stack_size(b->stack) - 1;
+	while (b->stack)
+	{
+		position = position_in_stack(b->stack, index_max);
+		if (position < (index_max / 2))
+		{
+			while (position > 0)
+			{
+				rb(b);
+				position--;
+			}
+		}
+		else
+		{
+			while (position <= index_max)
+			{
+				rrb(b);
+				position++;
+			}
+		}
+		pa(a, b);
+		index_max--;
+	}
 }

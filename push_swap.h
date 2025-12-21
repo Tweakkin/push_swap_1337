@@ -6,7 +6,7 @@
 /*   By: yboukhmi <yboukhmi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/06 12:20:36 by yboukhmi          #+#    #+#             */
-/*   Updated: 2025/12/21 12:47:35 by yboukhmi         ###   ########.fr       */
+/*   Updated: 2025/12/21 16:42:36 by yboukhmi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,5 +67,8 @@ int	find_min_index(t_stack *s);
 void	sort_five(t_data *a, t_data *b);
 void	push_swap(t_data *a, t_data *b);
 void	index_stack(t_stack *s);
+void	sort_chunks(t_data *a, t_data *b);
+int	position_in_stack(t_stack *s, int index);
+void	push_back_to_a(t_data *a, t_data *b);
 
 #endif

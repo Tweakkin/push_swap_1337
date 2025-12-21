@@ -6,7 +6,7 @@
 /*   By: yboukhmi <yboukhmi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/06 12:20:39 by yboukhmi          #+#    #+#             */
-/*   Updated: 2025/12/21 12:47:49 by yboukhmi         ###   ########.fr       */
+/*   Updated: 2025/12/21 16:44:24 by yboukhmi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,12 +55,6 @@ void print_list(t_stack *head) {
     t_stack *current = head;
     while (current != NULL) {
         printf("%d -> ", current->value);
-        current = current->next;
-    }
-	printf("\n");
-	current = head;
-	while (current != NULL) {
-        printf("%d -> ", current->index);
         current = current->next;
     }
     printf("NULL\n");
@@ -115,7 +109,7 @@ void	push_swap(t_data *a, t_data *b)
 	else if (size == 4 || size == 5)
 		sort_five(a, b);
 	else
-		return;
+		sort_chunks(a, b);
 }
 
 void	index_stack(t_stack *s)
@@ -148,7 +142,8 @@ int main(int argc, char **argv)
 	init_data(&a, &b);
 	args_to_arr(a, b, argc, argv);
 	index_stack(a->stack);
-	//push_swap(a, b);
+	push_swap(a, b);
+	printf("a : ");
 	print_list(a->stack);
 	free_stack(a);
 	free_stack(b);
