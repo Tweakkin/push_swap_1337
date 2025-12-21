@@ -6,7 +6,7 @@
 /*   By: yboukhmi <yboukhmi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/06 12:20:39 by yboukhmi          #+#    #+#             */
-/*   Updated: 2025/12/16 23:38:10 by yboukhmi         ###   ########.fr       */
+/*   Updated: 2025/12/21 12:47:49 by yboukhmi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void	args_to_arr(t_data *a, t_data *b, int argc, char **argv)
 		i++;
 	}
 }
-void    init_data(t_data **a, t_data **b, char **argv)
+void    init_data(t_data **a, t_data **b)
 {
 	*a = malloc(sizeof(t_data));
 	if (!*a)
@@ -55,6 +55,12 @@ void print_list(t_stack *head) {
     t_stack *current = head;
     while (current != NULL) {
         printf("%d -> ", current->value);
+        current = current->next;
+    }
+	printf("\n");
+	current = head;
+	while (current != NULL) {
+        printf("%d -> ", current->index);
         current = current->next;
     }
     printf("NULL\n");
@@ -112,6 +118,26 @@ void	push_swap(t_data *a, t_data *b)
 		return;
 }
 
+void	index_stack(t_stack *s)
+{
+	t_stack	*ptr;
+	t_stack *curr;
+
+	ptr = s;
+	while (ptr)
+	{
+		ptr->index = 0;
+		curr = s;
+		while (curr)
+		{
+			if (ptr->value > curr->value)
+				ptr->index++;
+			curr = curr->next;
+		}
+		ptr = ptr->next;
+	}
+}
+
 int main(int argc, char **argv)
 {
 	t_data *a;
@@ -119,9 +145,10 @@ int main(int argc, char **argv)
 	
 	if (argc < 2)
 		return (0);
-	init_data(&a, &b, argv);
+	init_data(&a, &b);
 	args_to_arr(a, b, argc, argv);
-	push_swap(a, b);
+	index_stack(a->stack);
+	//push_swap(a, b);
 	print_list(a->stack);
 	free_stack(a);
 	free_stack(b);

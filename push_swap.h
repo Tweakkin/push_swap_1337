@@ -6,7 +6,7 @@
 /*   By: yboukhmi <yboukhmi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/06 12:20:36 by yboukhmi          #+#    #+#             */
-/*   Updated: 2025/12/16 23:37:31 by yboukhmi         ###   ########.fr       */
+/*   Updated: 2025/12/21 12:47:35 by yboukhmi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@
 typedef struct s_stack
 {
     int value;
+    int index;
     struct s_stack *next;
 }t_stack;
 
@@ -35,7 +36,7 @@ char	**ft_split(char const *s, char c);
 void	exit_free(t_data *a, t_data *b);
 void	free_arr(char **arr);
 void    free_stack(t_data *data);
-void    init_data(t_data **a, t_data **b, char **argv);
+void    init_data(t_data **a, t_data **b);
 int	ft_strlen(const char *str);
 void	check_for_empty_string(char *arg, t_data *a, t_data *b);
 void	ft_lstadd_back(t_stack **lst, t_stack *new);
@@ -65,5 +66,6 @@ void	sort_two(t_data *a);
 int	find_min_index(t_stack *s);
 void	sort_five(t_data *a, t_data *b);
 void	push_swap(t_data *a, t_data *b);
+void	index_stack(t_stack *s);
 
 #endif

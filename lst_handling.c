@@ -6,7 +6,7 @@
 /*   By: yboukhmi <yboukhmi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/10 12:48:14 by marvin            #+#    #+#             */
-/*   Updated: 2025/12/14 23:02:20 by yboukhmi         ###   ########.fr       */
+/*   Updated: 2025/12/21 12:40:03 by yboukhmi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ t_stack	*ft_lstnew(int content)
 	if (!newnode)
 		return (NULL);
 	newnode->value = content;
+	newnode->index = -1;
 	newnode->next = NULL;
 	return (newnode);
 }
