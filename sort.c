@@ -6,33 +6,11 @@
 /*   By: yboukhmi <yboukhmi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/15 12:44:14 by yboukhmi          #+#    #+#             */
-/*   Updated: 2025/12/21 16:42:10 by yboukhmi         ###   ########.fr       */
+/*   Updated: 2025/12/22 16:28:28 by yboukhmi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-int	find_min_index(t_stack *s)
-{
-	int	i;
-	int	index;
-	int	min;
-
-	i = 0;
-	min = s->value;
-	index = i;
-	while (s)
-	{
-		if (s->value < min)
-		{
-			index = i;
-			min = s->value; 
-		}
-		s = s->next;
-		i++;
-	}
-	return (index);
-}
 
 void	sort_five(t_data *a, t_data *b)
 {
@@ -87,15 +65,10 @@ void	sort_three(t_data *a)
 void	sort_chunks(t_data *a, t_data *b)
 {
 	int	range;
-	int	size_of_stack;
 	int	pushed_count;
 
 	pushed_count = 0;
-	size_of_stack = stack_size(a->stack);
-	if (size_of_stack <= 100)
-		range = 15;
-	else
-		range = 30;
+	range = select_range(stack_size(a->stack));
 	while (a->stack != NULL)
 	{
 		if (a->stack->index < range + pushed_count)
@@ -114,20 +87,7 @@ void	sort_chunks(t_data *a, t_data *b)
 	}
 	push_back_to_a(a, b);
 }
-int	position_in_stack(t_stack *s, int index)
-{
-	int pos;
 
-	pos = 0;
-	while (s)
-	{
-		if (index == s->index)
-			return (pos);
-		pos++;
-		s = s->next;
-	}
-	return (-1);
-}
 void	push_back_to_a(t_data *a, t_data *b)
 {
 	int	index_max;
@@ -138,22 +98,7 @@ void	push_back_to_a(t_data *a, t_data *b)
 	while (b->stack)
 	{
 		position = position_in_stack(b->stack, index_max);
-		if (position < (index_max / 2))
-		{
-			while (position > 0)
-			{
-				rb(b);
-				position--;
-			}
-		}
-		else
-		{
-			while (position <= index_max)
-			{
-				rrb(b);
-				position++;
-			}
-		}
+		move_to_top(b, position, index_max);
 		pa(a, b);
 		index_max--;
 	}
