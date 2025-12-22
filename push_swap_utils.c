@@ -6,7 +6,7 @@
 /*   By: yboukhmi <yboukhmi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/04 18:09:07 by yboukhmi          #+#    #+#             */
-/*   Updated: 2025/12/14 23:43:08 by yboukhmi         ###   ########.fr       */
+/*   Updated: 2025/12/22 16:31:13 by yboukhmi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,41 +51,35 @@ int	ft_atoi_safe(const char *str, t_data *a, t_data *b)
 	return ((int)result * sign);
 }
 
-void	swap_nodes(t_data *s)
+int	check_if_sorted(t_stack *a)
 {
-	t_stack *first;
-	t_stack *second;
+	t_stack *curr_node;
 
-	first = s->stack;
-	second = s->stack->next;
-
-	first->next = second->next;
-	second->next = first;
-	s->stack = second;
+	if (!a)
+		return (1);
+	curr_node = a;
+	while (curr_node->next != NULL)
+	{
+		if (curr_node->value > curr_node->next->value)
+			return (0);
+		curr_node = curr_node->next;
+	}
+	return (1);
 }
 
-void	rotate_node(t_data *s)
+int	stack_size(t_stack *a)
 {
-	t_stack *last_node;
-	t_stack *first_node;
+	int		i;
+	t_stack	*curr_node;
 
-	last_node = ft_lstlast(s->stack);
-	first_node = s->stack;
-	s->stack = first_node->next;
-	last_node->next = first_node;
-	first_node->next = NULL;
-}
-
-void reverse_rotate(t_data *s)
-{
-	t_stack *last_node;
-	t_stack *sec_last_node;
-
-	last_node = ft_lstlast(s->stack);
-	sec_last_node = s->stack;
-	while (sec_last_node->next->next != NULL)
-		sec_last_node = sec_last_node->next;
-	last_node->next = s->stack;
-	s->stack = last_node;
-	sec_last_node->next = NULL;
+	i = 0;
+	if (!a)
+		return (0);
+	curr_node = a;
+	while (curr_node != NULL)
+	{
+		curr_node = curr_node->next;
+		i++;
+	}
+	return (i);
 }
