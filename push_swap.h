@@ -6,7 +6,7 @@
 /*   By: yboukhmi <yboukhmi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/06 12:20:36 by yboukhmi          #+#    #+#             */
-/*   Updated: 2025/12/21 16:42:36 by yboukhmi         ###   ########.fr       */
+/*   Updated: 2025/12/22 16:24:53 by yboukhmi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,5 +70,8 @@ void	index_stack(t_stack *s);
 void	sort_chunks(t_data *a, t_data *b);
 int	position_in_stack(t_stack *s, int index);
 void	push_back_to_a(t_data *a, t_data *b);
+int	select_range(int size_of_stack);
+void	move_to_top(t_data *b, int position, int index_max);
+void	args_to_arr(t_data *a, t_data *b, int argc, char **argv);
 
 #endif
