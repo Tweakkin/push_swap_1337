@@ -6,7 +6,7 @@
 /*   By: yboukhmi <yboukhmi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/06 12:20:39 by yboukhmi          #+#    #+#             */
-/*   Updated: 2025/12/21 18:18:29 by yboukhmi         ###   ########.fr       */
+/*   Updated: 2025/12/22 16:31:50 by yboukhmi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,39 +60,6 @@ void print_list(t_stack *head) {
     printf("NULL\n");
 }
 
-int	check_if_sorted(t_stack *a)
-{
-	t_stack *curr_node;
-
-	if (!a)
-		return (1);
-	curr_node = a;
-	while (curr_node->next != NULL)
-	{
-		if (curr_node->value > curr_node->next->value)
-			return (0);
-		curr_node = curr_node->next;
-	}
-	return (1);
-}
-
-int	stack_size(t_stack *a)
-{
-	int		i;
-	t_stack	*curr_node;
-
-	i = 0;
-	if (!a)
-		return (0);
-	curr_node = a;
-	while (curr_node != NULL)
-	{
-		curr_node = curr_node->next;
-		i++;
-	}
-	return (i);
-}
-
 void	push_swap(t_data *a, t_data *b)
 {
 	int	size;
@@ -110,26 +77,6 @@ void	push_swap(t_data *a, t_data *b)
 		sort_five(a, b);
 	else
 		sort_chunks(a, b);
-}
-
-void	index_stack(t_stack *s)
-{
-	t_stack	*ptr;
-	t_stack *curr;
-
-	ptr = s;
-	while (ptr)
-	{
-		ptr->index = 0;
-		curr = s;
-		while (curr)
-		{
-			if (ptr->value > curr->value)
-				ptr->index++;
-			curr = curr->next;
-		}
-		ptr = ptr->next;
-	}
 }
 
 int main(int argc, char **argv)
