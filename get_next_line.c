@@ -6,7 +6,7 @@
 /*   By: yboukhmi <yboukhmi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/26 11:55:48 by yboukhmi          #+#    #+#             */
-/*   Updated: 2025/11/27 19:01:05 by yboukhmi         ###   ########.fr       */
+/*   Updated: 2025/12/23 20:00:11 by yboukhmi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ char	*readjust_buff(char *buff)
 		free(buff);
 		return (NULL);
 	}
-	new_buff = malloc(sizeof(char) * (ft_strlen(buff) - i + 1));
+	new_buff = malloc(sizeof(char) * (gnl_strlen(buff) - i + 1));
 	if (!new_buff)
 		return (free(buff), NULL);
 	j = 0;
@@ -100,7 +100,6 @@ char	*get_next_line(int fd)
 {
 	static char	*buff;
 	char		*line;
-	//int			fdlen;
 
 	if (fd < 0 || BUFFER_SIZE <= 0 || BUFFER_SIZE >= 2147483647)
 		return (NULL);
