@@ -6,7 +6,7 @@
 /*   By: yboukhmi <yboukhmi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/22 16:26:03 by yboukhmi          #+#    #+#             */
-/*   Updated: 2025/12/22 16:28:13 by yboukhmi         ###   ########.fr       */
+/*   Updated: 2025/12/23 17:23:55 by yboukhmi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,7 +87,7 @@ void	move_to_top(t_data *b, int position, int index_max)
 	{
 		while (position > 0)
 		{
-			rb(b);
+			rb(b, 1);
 			position--;
 		}
 	}
@@ -95,7 +95,7 @@ void	move_to_top(t_data *b, int position, int index_max)
 	{
 		while (position <= index_max)
 		{
-			rrb(b);
+			rrb(b, 1);
 			position++;
 		}
 	}

@@ -6,7 +6,7 @@
 /*   By: yboukhmi <yboukhmi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/15 12:44:14 by yboukhmi          #+#    #+#             */
-/*   Updated: 2025/12/22 16:28:28 by yboukhmi         ###   ########.fr       */
+/*   Updated: 2025/12/23 17:22:05 by yboukhmi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,25 +24,25 @@ void	sort_five(t_data *a, t_data *b)
 		if (min_index <= size / 2)
 		{
 			while (min_index--)
-				ra(a);
+				ra(a, 1);
 		}
 		else
 		{
 			while (min_index++ < size)
-				rra(a);
+				rra(a, 1);
 		}
-		pb(a, b);
+		pb(a, b, 1);
 		size--;
 	}
 	sort_three(a);
 	while (b->stack != NULL)
-		pa(a, b);
+		pa(a, b, 1);
 }
 
 void	sort_two(t_data *a)
 {
 	if (a->stack->value > a->stack->next->value)
-		sa(a);
+		sa(a, 1);
 }
 
 void	sort_three(t_data *a)
@@ -55,11 +55,11 @@ void	sort_three(t_data *a)
 	sec = a->stack->next->value;
 	third = a->stack->next->next->value;
 	if (first > sec && first > third)
-		ra(a);
+		ra(a, 1);
 	else if (sec > first && sec > third)
-		rra(a);
+		rra(a, 1);
 	if (a->stack->value > a->stack->next->value)
-		sa(a);
+		sa(a, 1);
 }
 
 void	sort_chunks(t_data *a, t_data *b)
@@ -75,15 +75,15 @@ void	sort_chunks(t_data *a, t_data *b)
 		{
 			if (a->stack->index <= pushed_count)
 			{
-				pb(a , b);
-				rb(b);
+				pb(a , b, 1);
+				rb(b, 1);
 			}
 			else
-				pb (a, b);
+				pb (a, b, 1);
 			pushed_count++;
 		}
 		else
-			ra(a);
+			ra(a, 1);
 	}
 	push_back_to_a(a, b);
 }
@@ -99,7 +99,7 @@ void	push_back_to_a(t_data *a, t_data *b)
 	{
 		position = position_in_stack(b->stack, index_max);
 		move_to_top(b, position, index_max);
-		pa(a, b);
+		pa(a, b, 1);
 		index_max--;
 	}
 }
