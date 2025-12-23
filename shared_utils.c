@@ -6,13 +6,13 @@
 /*   By: yboukhmi <yboukhmi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/23 19:51:36 by yboukhmi          #+#    #+#             */
-/*   Updated: 2025/12/23 20:25:29 by yboukhmi         ###   ########.fr       */
+/*   Updated: 2025/12/24 00:44:27 by yboukhmi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void    init_data(t_data **a, t_data **b)
+void	init_data(t_data **a, t_data **b)
 {
 	*a = malloc(sizeof(t_data));
 	if (!*a)

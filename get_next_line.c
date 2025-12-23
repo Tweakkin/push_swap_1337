@@ -6,7 +6,7 @@
 /*   By: yboukhmi <yboukhmi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/26 11:55:48 by yboukhmi          #+#    #+#             */
-/*   Updated: 2025/12/23 20:00:11 by yboukhmi         ###   ########.fr       */
+/*   Updated: 2025/12/24 00:48:19 by yboukhmi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ char	*read_to_buff(char *buff, int fd)
 		if (bytes_read < 0)
 			return (free(buff), free(temp), NULL);
 		if (bytes_read == 0)
-            break ;
+			break ;
 		temp[bytes_read] = '\0';
 		new_buff = ft_strjoin(buff, temp);
 		free(buff);
@@ -91,7 +91,7 @@ char	*read_to_buff(char *buff, int fd)
 		if (!buff)
 			return (free(temp), NULL);
 		if (ft_strchr(buff, '\n'))
-			break ;		
+			break ;
 	}
 	return (free(temp), buff);
 }

@@ -6,7 +6,7 @@
 /*   By: yboukhmi <yboukhmi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/22 16:26:03 by yboukhmi          #+#    #+#             */
-/*   Updated: 2025/12/23 17:23:55 by yboukhmi         ###   ########.fr       */
+/*   Updated: 2025/12/24 00:49:15 by yboukhmi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	index_stack(t_stack *s)
 {
 	t_stack	*ptr;
-	t_stack *curr;
+	t_stack	*curr;
 
 	ptr = s;
 	while (ptr)
@@ -34,7 +34,7 @@ void	index_stack(t_stack *s)
 
 int	position_in_stack(t_stack *s, int index)
 {
-	int pos;
+	int	pos;
 
 	pos = 0;
 	while (s)
@@ -73,7 +73,7 @@ int	find_min_index(t_stack *s)
 		if (s->value < min)
 		{
 			index = i;
-			min = s->value; 
+			min = s->value;
 		}
 		s = s->next;
 		i++;

@@ -6,7 +6,7 @@
 /*   By: yboukhmi <yboukhmi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/22 16:29:38 by yboukhmi          #+#    #+#             */
-/*   Updated: 2025/12/22 16:30:10 by yboukhmi         ###   ########.fr       */
+/*   Updated: 2025/12/24 00:49:06 by yboukhmi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,11 @@
 
 void	swap_nodes(t_data *s)
 {
-	t_stack *first;
-	t_stack *second;
+	t_stack	*first;
+	t_stack	*second;
 
 	first = s->stack;
 	second = s->stack->next;
-
 	first->next = second->next;
 	second->next = first;
 	s->stack = second;
@@ -27,8 +26,8 @@ void	swap_nodes(t_data *s)
 
 void	rotate_node(t_data *s)
 {
-	t_stack *last_node;
-	t_stack *first_node;
+	t_stack	*last_node;
+	t_stack	*first_node;
 
 	last_node = ft_lstlast(s->stack);
 	first_node = s->stack;
@@ -37,10 +36,10 @@ void	rotate_node(t_data *s)
 	first_node->next = NULL;
 }
 
-void reverse_rotate(t_data *s)
+void	reverse_rotate(t_data *s)
 {
-	t_stack *last_node;
-	t_stack *sec_last_node;
+	t_stack	*last_node;
+	t_stack	*sec_last_node;
 
 	last_node = ft_lstlast(s->stack);
 	sec_last_node = s->stack;

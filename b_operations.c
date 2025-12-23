@@ -6,7 +6,7 @@
 /*   By: yboukhmi <yboukhmi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/14 21:31:31 by yboukhmi          #+#    #+#             */
-/*   Updated: 2025/12/23 17:22:53 by yboukhmi         ###   ########.fr       */
+/*   Updated: 2025/12/24 00:37:55 by yboukhmi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	sb(t_data *b, int print)
 
 int	pb(t_data *a, t_data *b, int print)
 {
-	t_stack *temp;
+	t_stack	*temp;
 
 	if (!a || stack_size(a->stack) < 1)
 		return (0);
@@ -37,7 +37,7 @@ int	pb(t_data *a, t_data *b, int print)
 	return (1);
 }
 
-int rb(t_data *b, int print)
+int	rb(t_data *b, int print)
 {
 	if (!b || stack_size(b->stack) < 2)
 		return (0);

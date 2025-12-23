@@ -6,7 +6,7 @@
 /*   By: yboukhmi <yboukhmi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/10 12:48:14 by marvin            #+#    #+#             */
-/*   Updated: 2025/12/21 12:40:03 by yboukhmi         ###   ########.fr       */
+/*   Updated: 2025/12/24 00:59:07 by yboukhmi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	ft_lstadd_back(t_stack **lst, t_stack *new)
 
 t_stack	*ft_lstnew(int content)
 {
-    t_stack	*newnode;
+	t_stack	*newnode;
 
 	newnode = malloc(sizeof(t_stack));
 	if (!newnode)

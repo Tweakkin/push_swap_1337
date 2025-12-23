@@ -6,7 +6,7 @@
 /*   By: yboukhmi <yboukhmi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/06 12:20:39 by yboukhmi          #+#    #+#             */
-/*   Updated: 2025/12/23 20:20:59 by yboukhmi         ###   ########.fr       */
+/*   Updated: 2025/12/24 00:57:25 by yboukhmi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@ void	push_swap(t_data *a, t_data *b)
 
 	size = stack_size(a->stack);
 	if (check_if_sorted(a->stack) == 1)
-		return;
+		return ;
 	else if (size == 1)
-		return;
+		return ;
 	else if (size == 2)
 		sort_two(a);
 	else if (size == 3)
@@ -31,18 +31,18 @@ void	push_swap(t_data *a, t_data *b)
 		sort_chunks(a, b);
 }
 
-int main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
-	t_data *a;
-	t_data *b;
-	
+	t_data	*a;
+	t_data	*b;
+
 	if (argc < 2)
-		return 0;
+		return (0);
 	init_data(&a, &b);
 	args_to_arr(a, b, argc, argv);
 	index_stack(a->stack);
 	push_swap(a, b);
 	free_stack(a);
 	free_stack(b);
-	return 0;
+	return (0);
 }

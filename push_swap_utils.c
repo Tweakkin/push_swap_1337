@@ -6,7 +6,7 @@
 /*   By: yboukhmi <yboukhmi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/04 18:09:07 by yboukhmi          #+#    #+#             */
-/*   Updated: 2025/12/23 20:21:54 by yboukhmi         ###   ########.fr       */
+/*   Updated: 2025/12/24 00:42:00 by yboukhmi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ int	ft_atoi_safe(const char *str, t_data *a, t_data *b)
 
 int	check_if_sorted(t_stack *a)
 {
-	t_stack *curr_node;
+	t_stack	*curr_node;
 
 	if (!a)
 		return (1);

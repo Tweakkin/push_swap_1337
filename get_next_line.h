@@ -6,7 +6,7 @@
 /*   By: yboukhmi <yboukhmi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/26 11:56:14 by yboukhmi          #+#    #+#             */
-/*   Updated: 2025/12/23 20:24:59 by yboukhmi         ###   ########.fr       */
+/*   Updated: 2025/12/24 00:46:30 by yboukhmi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@
 # include <unistd.h>
 # include <fcntl.h>
 
-#ifndef BUFFER_SIZE
-# define BUFFER_SIZE 10
-#endif
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 10
+# endif
 
 char	*get_next_line(int fd);
 char	*extract_line(char *buff);

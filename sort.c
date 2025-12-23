@@ -6,7 +6,7 @@
 /*   By: yboukhmi <yboukhmi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/15 12:44:14 by yboukhmi          #+#    #+#             */
-/*   Updated: 2025/12/23 17:22:05 by yboukhmi         ###   ########.fr       */
+/*   Updated: 2025/12/24 00:50:15 by yboukhmi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ void	sort_chunks(t_data *a, t_data *b)
 		{
 			if (a->stack->index <= pushed_count)
 			{
-				pb(a , b, 1);
+				pb(a, b, 1);
 				rb(b, 1);
 			}
 			else
@@ -91,7 +91,7 @@ void	sort_chunks(t_data *a, t_data *b)
 void	push_back_to_a(t_data *a, t_data *b)
 {
 	int	index_max;
-	int position;
+	int	position;
 
 	position = 0;
 	index_max = stack_size(b->stack) - 1;

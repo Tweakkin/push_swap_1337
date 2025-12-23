@@ -6,7 +6,7 @@
 /*   By: yboukhmi <yboukhmi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/14 17:39:57 by yboukhmi          #+#    #+#             */
-/*   Updated: 2025/12/23 17:17:02 by yboukhmi         ###   ########.fr       */
+/*   Updated: 2025/12/24 00:37:14 by yboukhmi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	sa(t_data *a, int print)
 
 int	pa(t_data *a, t_data *b, int print)
 {
-	t_stack *temp;
+	t_stack	*temp;
 
 	if (!b || stack_size(b->stack) < 1)
 		return (0);
@@ -37,7 +37,7 @@ int	pa(t_data *a, t_data *b, int print)
 	return (1);
 }
 
-int ra(t_data *a, int print)
+int	ra(t_data *a, int print)
 {
 	if (!a || stack_size(a->stack) < 2)
 		return (0);

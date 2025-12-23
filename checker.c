@@ -6,7 +6,7 @@
 /*   By: yboukhmi <yboukhmi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/22 16:20:09 by yboukhmi          #+#    #+#             */
-/*   Updated: 2025/12/23 20:29:38 by yboukhmi         ###   ########.fr       */
+/*   Updated: 2025/12/24 00:49:48 by yboukhmi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
 }
 
-int handle_operations(t_data *a, t_data *b, char *move)
+int	handle_operations(t_data *a, t_data *b, char *move)
 {
 	if (ft_strncmp(move, "sa\n", 3) == 0)
 		sa(a, 0);
@@ -62,27 +62,25 @@ void	checking(t_data *a, t_data *b)
 		write(1, "KO\n", 3);
 }
 
-int main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
-	t_data *a;
-	t_data *b;
-	char *line;
-	
+	t_data	*a;
+	t_data	*b;
+	char	*line;
+
 	if (argc < 2)
-		return 0;
+		return (0);
 	init_data(&a, &b);
 	args_to_arr(a, b, argc, argv);
 	while (1)
 	{
 		line = get_next_line(0);
 		if (!line)
-			break;
+			break ;
 		if (handle_operations(a, b, line) == 0)
 		{
-			write(2, "Error\n", 6);
 			free(line);
-			free_stack(a);
-			free_stack(b);
+			exit_free(a, b);
 			exit(1);
 		}
 		free(line);

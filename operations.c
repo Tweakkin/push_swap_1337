@@ -6,24 +6,24 @@
 /*   By: yboukhmi <yboukhmi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/14 21:35:23 by yboukhmi          #+#    #+#             */
-/*   Updated: 2025/12/23 17:29:21 by yboukhmi         ###   ########.fr       */
+/*   Updated: 2025/12/24 00:50:28 by yboukhmi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int ss(t_data *a, t_data *b, int print)
+int	ss(t_data *a, t_data *b, int print)
 {
 	int	swapped;
 
 	swapped = 0;
 	if (a && stack_size(a->stack) >= 2)
-	{	
+	{
 		swap_nodes(a);
 		swapped = 1;
 	}
 	if (b && stack_size(b->stack) >= 2)
-	{	
+	{
 		swap_nodes(b);
 		swapped = 1;
 	}
