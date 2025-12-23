@@ -6,21 +6,12 @@
 /*   By: yboukhmi <yboukhmi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/22 16:20:09 by yboukhmi          #+#    #+#             */
-/*   Updated: 2025/12/23 20:15:21 by yboukhmi         ###   ########.fr       */
+/*   Updated: 2025/12/23 20:21:10 by yboukhmi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include "get_next_line.h"
-
-void print_list(t_stack *head) {
-    t_stack *current = head;
-    while (current != NULL) {
-        printf("%d -> ", current->value);
-        current = current->next;
-    }
-    printf("NULL\n");
-}
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {

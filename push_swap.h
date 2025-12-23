@@ -6,7 +6,7 @@
 /*   By: yboukhmi <yboukhmi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/06 12:20:36 by yboukhmi          #+#    #+#             */
-/*   Updated: 2025/12/23 17:29:44 by yboukhmi         ###   ########.fr       */
+/*   Updated: 2025/12/23 20:22:02 by yboukhmi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <stddef.h>
-#include <stdio.h>
 #include <limits.h>
 
 typedef struct s_stack

@@ -6,7 +6,7 @@
 /*   By: yboukhmi <yboukhmi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/04 18:09:07 by yboukhmi          #+#    #+#             */
-/*   Updated: 2025/12/22 16:31:13 by yboukhmi         ###   ########.fr       */
+/*   Updated: 2025/12/23 20:21:54 by yboukhmi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	ft_atoi_safe(const char *str, t_data *a, t_data *b)
 {
 	size_t	i;
 	int		sign;
-	long		result;
+	long	result;
 
 	i = 0;
 	sign = 1;

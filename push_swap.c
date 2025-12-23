@@ -6,20 +6,11 @@
 /*   By: yboukhmi <yboukhmi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/06 12:20:39 by yboukhmi          #+#    #+#             */
-/*   Updated: 2025/12/23 19:52:29 by yboukhmi         ###   ########.fr       */
+/*   Updated: 2025/12/23 20:20:59 by yboukhmi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-void print_list(t_stack *head) {
-    t_stack *current = head;
-    while (current != NULL) {
-        printf("%d -> ", current->value);
-        current = current->next;
-    }
-    printf("NULL\n");
-}
 
 void	push_swap(t_data *a, t_data *b)
 {
