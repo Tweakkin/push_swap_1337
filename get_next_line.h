@@ -6,7 +6,7 @@
 /*   By: yboukhmi <yboukhmi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/26 11:56:14 by yboukhmi          #+#    #+#             */
-/*   Updated: 2025/12/23 20:01:22 by yboukhmi         ###   ########.fr       */
+/*   Updated: 2025/12/23 20:24:59 by yboukhmi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <fcntl.h>
-# include <stdio.h>
 
 #ifndef BUFFER_SIZE
 # define BUFFER_SIZE 10
