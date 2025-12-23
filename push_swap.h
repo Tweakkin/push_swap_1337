@@ -6,7 +6,7 @@
 /*   By: yboukhmi <yboukhmi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/06 12:20:36 by yboukhmi          #+#    #+#             */
-/*   Updated: 2025/12/22 16:24:53 by yboukhmi         ###   ########.fr       */
+/*   Updated: 2025/12/23 17:29:44 by yboukhmi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,21 +46,21 @@ void	check_for_invalid_char(char *agr, t_data *a, t_data *b);
 void	check_for_duplicate(int num, t_data *a, t_data *b);
 int	stack_size(t_stack *a);
 int	check_if_sorted(t_stack *a);
-int	sa(t_data *a);
-int	sb(t_data *b);
+int	sa(t_data *a, int print);
+int	sb(t_data *b, int print);
 void    swap_nodes(t_data *s);
-int ss(t_data *a, t_data *b);
-int	pa(t_data *a, t_data *b);
-int	pb(t_data *a, t_data *b);
+int ss(t_data *a, t_data *b, int print);
+int	pa(t_data *a, t_data *b, int print);
+int	pb(t_data *a, t_data *b, int print);
 t_stack	*ft_lstlast(t_stack *lst);
 void	rotate_node(t_data *s);
-int ra(t_data *a);
-int	rr(t_data *a, t_data *b);
-int rb(t_data *b);
+int ra(t_data *a, int print);
+int	rr(t_data *a, t_data *b, int print);
+int rb(t_data *b, int print);
 void reverse_rotate(t_data *s);
-int	rra(t_data *a);
-int	rrb(t_data *b);
-int	rrr(t_data *a, t_data *b);
+int	rra(t_data *a, int print);
+int	rrb(t_data *b, int print);
+int	rrr(t_data *a, t_data *b, int print);
 void	sort_three(t_data *a);
 void	sort_two(t_data *a);
 int	find_min_index(t_stack *s);
