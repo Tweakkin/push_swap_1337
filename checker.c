@@ -6,7 +6,7 @@
 /*   By: yboukhmi <yboukhmi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/22 16:20:09 by yboukhmi          #+#    #+#             */
-/*   Updated: 2025/12/22 16:23:55 by yboukhmi         ###   ########.fr       */
+/*   Updated: 2025/12/23 16:52:22 by yboukhmi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,5 +32,9 @@ int main(int argc, char **argv)
 	args_to_arr(a, b, argc, argv);
 	index_stack(a->stack);
 	print_list(a->stack);
+	while (1)
+	{
+		
+	}
 	return (0);
 }
