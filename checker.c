@@ -6,7 +6,7 @@
 /*   By: yboukhmi <yboukhmi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/22 16:20:09 by yboukhmi          #+#    #+#             */
-/*   Updated: 2025/12/23 20:21:10 by yboukhmi         ###   ########.fr       */
+/*   Updated: 2025/12/23 20:29:38 by yboukhmi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,6 +80,7 @@ int main(int argc, char **argv)
 		if (handle_operations(a, b, line) == 0)
 		{
 			write(2, "Error\n", 6);
+			free(line);
 			free_stack(a);
 			free_stack(b);
 			exit(1);
