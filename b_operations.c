@@ -6,22 +6,23 @@
 /*   By: yboukhmi <yboukhmi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/14 21:31:31 by yboukhmi          #+#    #+#             */
-/*   Updated: 2025/12/15 12:11:31 by yboukhmi         ###   ########.fr       */
+/*   Updated: 2025/12/23 17:22:53 by yboukhmi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	sb(t_data *b)
+int	sb(t_data *b, int print)
 {
 	if (!b || stack_size(b->stack) < 2)
 		return (0);
 	swap_nodes(b);
-	write(1, "sb\n", 3);
+	if (print == 1)
+		write(1, "sb\n", 3);
 	return (1);
 }
 
-int	pb(t_data *a, t_data *b)
+int	pb(t_data *a, t_data *b, int print)
 {
 	t_stack *temp;
 
@@ -31,24 +32,27 @@ int	pb(t_data *a, t_data *b)
 	a->stack = a->stack->next;
 	temp->next = b->stack;
 	b->stack = temp;
-	write(1, "pb\n", 3);
+	if (print == 1)
+		write(1, "pb\n", 3);
 	return (1);
 }
 
-int rb(t_data *b)
+int rb(t_data *b, int print)
 {
 	if (!b || stack_size(b->stack) < 2)
 		return (0);
 	rotate_node(b);
-	write(1, "rb\n", 3);
+	if (print == 1)
+		write(1, "rb\n", 3);
 	return (1);
 }
 
-int	rrb(t_data *b)
+int	rrb(t_data *b, int print)
 {
 	if (!b || stack_size(b->stack) < 2)
 		return (0);
 	reverse_rotate(b);
-	write(1, "rrb\n", 4);
+	if (print == 1)
+		write(1, "rrb\n", 4);
 	return (1);
 }
